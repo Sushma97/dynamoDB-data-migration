@@ -1,4 +1,14 @@
 #!/usr/bin/env python
+
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+#
+# Copyright (c) 2021 Cisco Systems. All rights reserved.
+#
+# Created by Sushma Mahadevaswamy on  01/07/2021 for Partner Portal project.
+# Since: 0.9.6
+#
+# Data migration script for dynamoDB
+
 from boto.dynamodb2.exceptions import ValidationException
 from boto.dynamodb2.layer1 import DynamoDBConnection
 from boto.dynamodb2.table import Table
