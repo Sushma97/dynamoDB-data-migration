@@ -67,12 +67,15 @@ def data_migration(ddbc, ddbc_dest, table):
                 print(ddbc_dest.describe_table(dst_table)['Table']['TableStatus'])
 
 
-with concurrent.futures.ThreadPoolExecutor() as executor:
-    futures = []
-    for table in prp.tables:
-        futures.append(executor.submit(data_migration, ddbc_src, ddbc_dest, table))
-    for future in concurrent.futures.as_completed(futures):
-        print("Done with Copying")
-        print(future.result())
+
+def run():
+    print(prp.tables)
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = []
+        for table in prp.tables:
+            futures.append(executor.submit(data_migration, ddbc_src, ddbc_dest, table))
+        for future in concurrent.futures.as_completed(futures):
+            print("Done with Copying")
+            print(future.result())
 
 print("We are done. Exiting...")
