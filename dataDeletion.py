@@ -4,7 +4,7 @@
 #
 # Created by Sushma Mahadevaswamy on  01/07/2021.
 #
-# Data migration script for dynamoDB
+# Data deletion script for dynamoDB
 
 from boto.dynamodb2.exceptions import ValidationException
 from boto.dynamodb2.layer1 import DynamoDBConnection
